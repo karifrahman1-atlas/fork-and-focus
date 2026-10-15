@@ -1,1 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Basic SEO -->
+    <title>The Olive Table | Modern Dining in Dhanmondi, Dhaka</title>
+
+    <meta name="description"
+          content="Discover The Olive Table, a modern dining concept in Dhanmondi, Dhaka. Explore our menu, signature dishes and dining experience.">
+
+    <meta name="robots" content="index, follow">
+
+    <!-- Replace this with the final live URL after deployment -->
+    <link rel="canonical" href="https://example.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title"
+          content="The Olive Table | Modern Dining in Dhaka">
+    <meta property="og:description"
+          content="A fresh take on casual dining. Explore our signature dishes and restaurant experience.">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:image"
+          content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:site_name" content="The Olive Table">
+
+    <meta name="theme-color" content="#203d32">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Restaurant structured data: fictional demo project -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "@id": "https://example.com/#restaurant",
+      "name": "The Olive Table",
+      "description": "A fictional modern casual dining restaurant concept created for a website and local SEO portfolio demo.",
+      "url": "https://example.com/",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
+      "servesCuisine": [
+        "Contemporary",
+        "International"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dhanmondi",
+        "addressRegion": "Dhaka",
+        "addressCountry": "BD"
+      }
+    }
+    </script>
+
+    <style>
+        /* ---------- Base ---------- */
+
+        :root {
+            --green: #203d32;
+            --green-light: #345746;
+            --cream: #f8f6ef;
+            --white: #ffffff;
+            --gold: #c6a66b;
+            --text: #30352f;
+            --muted: #72766e;
+            --border: #e8e5db;
+            --serif: "Playfair Display", Georgia, serif;
+            --sans: "DM Sans", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin-inline: auto;
+        }
+
+        .section {
+            padding: 95px 0;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--green-light);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--serif);
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--green);
+        }
+
+        .section-intro {
+            max-width: 580px;
+            color: var(--muted);
+            margin-top: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 12px 23px;
+            border: 1px solid var(--green);
+            border-radius: 3px;
+            background: var(--green);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s ease,
+                        color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--green-light);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--green);
+        }
+
+        .btn-outline:hover {
+            background: var(--green);
+            color: var(--white);
+        }
+
+        /* ---------- Header ---------- */
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(248, 246, 239, 0.97);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            font-family: var(--serif);
+            font-size: 1.55rem;
+            color: var(--green);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .brand span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        .nav-links a:hover {
+            color: var(--green-light);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 8px 12px;
+            color: var(--green);
+            cursor: pointer;
+        }
+
+        /* ---------- Hero ---------- */
+
+        .hero {
+            padding: 58px 0 75px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .hero h1 {
+            color: var(--green);
+            font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+            letter-spacing: -1.5px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 em {
+            color: var(--green-light);
+            font-weight: 400;
+        }
+
+        .hero-copy > p {
+            color: var(--muted);
+            max-width: 450px;
+            margin-bottom: 28px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hero-note {
+            margin-top: 25px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 510px;
+            object-fit: cover;
+            border-radius: 180px 180px 4px 4px;
+        }
+
+        .image-note {
+            position: absolute;
+            bottom: 25px;
+            left: -25px;
+            max-width: 210px;
+            background: var(--white);
+            padding: 18px 21px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .image-note strong {
+            display: block;
+            color: var(--green);
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .image-note span {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        /* ---------- Introduction strip ---------- */
+
+        .intro-strip {
+            background: var(--green);
+            color: var(--white);
+            padding: 30px 0;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            gap: 20px;
+        }
+
+        .intro-grid div + div {
+            border-left: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .intro-grid strong {
+            display: block;
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .intro-grid span {
+            font-size: 0.78rem;
+            color: #d5dfd7;
+        }
+
+        /* ---------- Story ---------- */
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .story-copy p {
+            color: var(--muted);
+            margin-top: 18px;
+        }
+
+        .story-copy .btn {
+            margin-top: 25px;
+        }
+
+        /* ---------- Menu ---------- */
+
+        .menu-section {
+            background: #eeede4;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 38px;
+        }
+
+        .dish-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .dish-card {
+            background: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .dish-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .dish-card img {
+            width: 100%;
+            height: 235px;
+            object-fit: cover;
+        }
+
+        .dish-info {
+            padding: 22px;
+        }
+
+        .dish-info h3 {
+            font-size: 1.35rem;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+
+        .dish-info p {
+            color: var(--muted);
+            font-size: 0.87rem;
+        }
+
+        .dish-price {
+            display: block;
+            margin-top: 15px;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .menu-disclaimer {
+            margin-top: 25px;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        /* ---------- Experience banner ---------- */
+
+        .experience {
+            position: relative;
+            background: var(--green);
+            color: var(--white);
+            padding: 95px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .experience .eyebrow {
+            color: #e0c48d;
+        }
+
+        .experience h2 {
+            max-width: 750px;
+            margin: 0 auto;
+            color: var(--white);
+        }
+
+        .experience p {
+            max-width: 570px;
+            margin: 20px auto 28px;
+            color: #d5dfd7;
+        }
+
+        .experience .btn {
+            background: var(--cream);
+            border-color: var(--cream);
+            color: var(--green);
+        }
+
+        .experience .btn:hover {
+            background: var(--white);
+        }
+
+        /* ---------- Reservation ---------- */
+
+        .reservation-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 65px;
+            align-items: start;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            margin-bottom: 23px;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--green);
+            margin-bottom: 4px;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .reservation-form {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 4px;
+        }
+
+        .reservation-form h3 {
+            color: var(--green);
+            font-size: 1.7rem;
+            margin-bottom: 8px;
+        }
+
+        .form-note {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dcded5;
+            border-radius: 3px;
+            background: #fff;
+            color: var(--text);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .reservation-form .btn {
+            width: 100%;
+        }
+
+        .form-status {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--green);
+        }
+
+        /* ---------- Footer ---------- */
+
+        .footer {
+            background: #172e25;
+            color: var(--white);
+            padding: 55px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 45px;
+            padding-bottom: 35px;
+        }
+
+        .footer .brand {
+            color: var(--white);
+        }
+
+        .footer p {
+            max-width: 340px;
+            color: #c3d0c6;
+            font-size: 0.85rem;
+            margin-top: 14px;
+        }
+
+        .footer h3 {
+            font-family: var(--sans);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer li {
+            margin-bottom: 9px;
+            font-size: 0.85rem;
+            color: #c3d0c6;
+        }
+
+        .footer a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            font-size: 0.78rem;
+            color: #c3d0c6;
+        }
+
+        /* ---------- Responsive ---------- */
+
+        @media (max-width: 850px) {
+            .nav {
+                flex-wrap: wrap;
+                padding: 15px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 8px 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px 0;
+            }
+
+            .hero-grid,
+            .story-grid,
+            .reservation-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .hero-image img {
+                height: 430px;
+            }
+
+            .image-note {
+                left: 12px;
+            }
+
+            .story-image img {
+                height: 350px;
+            }
+
+            .dish-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid > div:first-child {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .section {
+                padding: 65px 0;
+            }
+
+            .hero {
+                padding-top: 40px;
+            }
+
+            .hero h1 {
+                font-size: 2.7rem;
+            }
+
+            .hero-image img {
+                height: 350px;
+                border-radius: 130px 130px 4px 4px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 17px;
+            }
+
+            .intro-grid div + div {
+                border-left: 0;
+                border-top: 1px solid rgba(255,255,255,0.2);
+                padding-top: 17px;
+            }
+
+            .section-heading {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .dish-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dish-card img {
+                height: 240px;
+            }
+
+            .reservation-form {
+                padding: 22px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-grid > div:first-child {
+                grid-column: auto;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav">
+
+            <a href="#home" class="brand" aria-label="The Olive Table home">
+                The Olive<span>.</span>Table
+            </a>
+
+            <button class="menu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation">
+                Menu ☰
+            </button>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-links" id="primary-navigation">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#reservation">Visit Us</a></li>
+                    <li><a href="#reservation" class="btn">Reserve a Table</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+
+                <div class="hero-copy">
+                    <span class="eyebrow">A fresh take on dining</span>
+
+                    <h1>
+                        Good food.<br>
+                        <em>Better moments.</em>
+                    </h1>
+
+                    <p>
+                        Thoughtfully prepared dishes, a welcoming atmosphere,
+                        and a little more time around the table.
+                        Discover a new favourite dining experience.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#menu" class="btn">Explore Our Menu</a>
+                        <a href="#reservation" class="btn btn-outline">
+                            Plan Your Visit
+                        </a>
+                    </div>
+
+                    <p class="hero-note">
+                        A modern casual dining concept in Dhanmondi, Dhaka.
+                    </p>
+                </div>
+
+                <div class="hero-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1100&q=80"
+                        alt="An elegantly arranged restaurant dining table"
+                        fetchpriority="high"
+                        width="1100"
+                        height="1400">
+
+                    <div class="image-note">
+                        <strong>Made for gathering.</strong>
+                        <span>Good food, shared moments.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Highlights -->
+        <section class="intro-strip" aria-label="Dining highlights">
+            <div class="container intro-grid">
+
+                <div>
+                    <strong>Thoughtful Dining</strong>
+                    <span>A welcoming atmosphere</span>
+                </div>
+
+                <div>
+                    <strong>Signature Dishes</strong>
+                    <span>Explore our featured menu</span>
+                </div>
+
+                <div>
+                    <strong>Your Next Gathering</strong>
+                    <span>Make time for a good meal</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Story -->
+        <section class="section" id="story">
+            <div class="container story-grid">
+
+                <div class="story-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80"
+                        alt="Warm and inviting restaurant interior"
+                        loading="lazy"
+                        width="1000"
+                        height="750">
+                </div>
+
+                <div class="story-copy">
+                    <span class="eyebrow">A little about us</span>
+
+                    <h2>More than a meal. A moment to enjoy.</h2>
+
+                    <p>
+                        The Olive Table is a fictional restaurant concept
+                        built around a simple idea: good food feels even
+                        better when you have the right people around you.
+                    </p>
+
+                    <p>
+                        From relaxed lunches to unhurried dinners, our
+                        imagined dining space brings together contemporary
+                        flavours, considered presentation and a comfortable
+                        setting.
+                    </p>
+
+                    <a href="#menu" class="btn">Discover the Menu</a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Featured Menu -->
+        <section class="section menu-section" id="menu">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">From our kitchen</span>
+                        <h2>Featured favourites.</h2>
+
+                        <p class="section-intro">
+                            A glimpse of the dishes featured in our
+                            concept menu. Find something that makes
+                            your next meal memorable.
+                        </p>
+                    </div>
+
+                    <a href="#reservation" class="btn btn-outline">
+                        Plan Your Visit
+                    </a>
+                </div>
+
+                <div class="dish-grid">
+
+                    <article class="dish-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=80"
+                            alt="Pasta served with fresh herbs"
+                            loading="lazy"
+                            width="700"
+                            height="500">
+
+                        <div class="dish-info">
+                            <h3>Herb Garden Pasta</h3>
+
+                            <p>
+                                A contemporary pasta concept with herbs,
+                                seasonal flavours and a light sauce.
+                            </p>
+
+                            <span class="dish-price">৳580</span>
+                        </div>
+                    </article>
+
+
+                    <article class="dish-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+                            alt="A colourful fresh salad bowl"
+                            loading="lazy"
+                            width="700"
+                            height="500">
+
+                        <div class="dish-info">
+                            <h3>Harvest Garden Bowl</h3>
+
+                            <p>
+                                A colourful bowl inspired by fresh
+                                ingredients and balanced flavours.
+                            </p>
+
+                            <span class="dish-price">৳420</span>
+                        </div>
+                    </article>
+
+
+                    <article class="dish-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80"
+                            alt="Grilled food presented on a plate"
+                            loading="lazy"
+                            width="700"
+                            height="500">
+
+                        <div class="dish-info">
+                            <h3>Signature Grill Plate</h3>
+
+                            <p>
+                                A hearty grilled dish concept with
+                                a carefully arranged plate.
+                            </p>
+
+                            <span class="dish-price">৳750</span>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p class="menu-disclaimer">
+                    Portfolio demo: dish descriptions and prices are
+                    illustrative and do not represent a real restaurant menu.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- Experience -->
+        <section class="experience">
+            <div class="container">
+
+                <span class="eyebrow">Make it a good one</span>
+
+                <h2>
+                    The best conversations deserve a seat at the table.
+                </h2>
+
+                <p>
+                    Planning a relaxed lunch or an evening with friends?
+                    Explore our dining concept and make room for a good meal.
+                </p>
+
+                <a href="#reservation" class="btn">
+                    Plan Your Visit
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- Contact and Reservation -->
+        <section class="section" id="reservation">
+            <div class="container reservation-grid">
+
+                <div>
+                    <span class="eyebrow">Come on in</span>
+
+                    <h2>Your next table awaits.</h2>
+
+                    <p class="section-intro">
+                        Thinking about a visit? Explore the contact
+                        information and reservation experience in
+                        this restaurant website demo.
+                    </p>
+
+                    <div class="contact-details">
+
+                        <div class="contact-item">
+                            <strong>Location</strong>
+                            <p>Dhanmondi, Dhaka, Bangladesh</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <strong>Opening Hours</strong>
+                            <p>Illustrative demo hours</p>
+                            <p>Daily, 11:00 AM – 10:00 PM</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <strong>Reservations</strong>
+                            <p>
+                                The reservation form is a visual demo
+                                and is not connected to a booking system.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <form class="reservation-form" id="reservation-form">
+
+                    <h3>Plan your visit</h3>
+
+                    <p class="form-note">
+                        Try the form to preview the reservation interface.
+                    </p>
+
+                    <div class="form-group">
+                        <label for="guest-name">Your name</label>
+
+                        <input
+                            type="text"
+                            id="guest-name"
+                            name="name"
+                            autocomplete="name"
+                            placeholder="Enter your name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guest-email">Email address</label>
+
+                        <input
+                            type="email"
+                            id="guest-email"
+                            name="email"
+                            autocomplete="email"
+                            placeholder="you@example.com"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visit-date">Preferred date</label>
+
+                        <input
+                            type="date"
+                            id="visit-date"
+                            name="date"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guest-message">Additional details</label>
+
+                        <textarea
+                            id="guest-message"
+                            name="message"
+                            placeholder="Tell us about your planned visit"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Preview Reservation Request
+                    </button>
+
+                    <p class="form-status" id="form-status"
+                       role="status" aria-live="polite"></p>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <a href="#home" class="brand">
+                        The Olive<span>.</span>Table
+                    </a>
+
+                    <p>
+                        A modern restaurant website concept created
+                        for web development and local SEO practice.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Explore</h3>
+
+                    <ul>
+                        <li><a href="#story">Our Story</a></li>
+                        <li><a href="#menu">Featured Menu</a></li>
+                        <li><a href="#reservation">Visit Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Project Information</h3>
+
+                    <ul>
+                        <li>Fictional business</li>
+                        <li>Portfolio demo</li>
+                        <li>Not a live restaurant</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                © <span id="current-year"></span> The Olive Table.
+                Fictional portfolio project.
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script>
+        // Mobile navigation
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.textContent = isOpen ? "Close ✕" : "Menu ☰";
+        });
+
+        // Close mobile navigation after selecting a link
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.textContent = "Menu ☰";
+            });
+        });
+
+        // Display current year
+        document.getElementById("current-year").textContent =
+            new Date().getFullYear();
+
+        // Reservation form demonstration
+        const reservationForm =
+            document.getElementById("reservation-form");
+
+        const formStatus = document.getElementById("form-status");
+
+        const visitDate = document.getElementById("visit-date");
+
+        // Prevent selection of past dates
+        const today = new Date();
+        const localToday = [
+            today.getFullYear(),
+            String(today.getMonth() + 1).padStart(2, "0"),
+            String(today.getDate()).padStart(2, "0")
+        ].join("-");
+
+        visitDate.min = localToday;
+
+        reservationForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            formStatus.textContent =
+                "Demo only: your information has not been sent or saved. " +
+                "A real reservation system must be connected before launch.";
+        });
+    </script>
+
+</body>
+</html>
